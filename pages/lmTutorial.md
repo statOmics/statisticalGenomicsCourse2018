@@ -33,5 +33,5 @@ The patients, however, do not only differ in the histologic grade, but also on t
 Details on the implementation can be found in the book of Faraway (chapter 2).
 
 #### 3. Software
-All tutorials are in R studio, which can be installed locally or launched in your browser by hitting the button below:
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/pda/master?urlpath=rstudio)
+All developments will be done using R/Bioconductor via the [Rstudio](https://www.rstudio.com) interface. This can be installed locally or can be launched in a browser by hitting on
+[![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse/master?urlpath=rstudio)
