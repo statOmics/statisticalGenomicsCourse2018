@@ -1,0 +1,119 @@
+---
+title: "Breastcancer Gene Expression Study: KPNA2 gene"
+author: "Lieven Clement"
+output:
+  html_notebook: default
+---
+
+#1. Background
+Background: Histologic grade in breast cancer provides clinically important prognostic information. Researchers examined whether histologic grade was associated with gene expression profiles of breast cancers and whether such profiles could be used to improve histologic grading. In this tutorial we will assess the impact of histologic grade on expression of the KPNA2 gene that is known to be associated with poor BC prognosis.
+The patients, however, do not only differ in the histologic grade, but also on their lymph node status. The lymph nodes were not affected (0) or surgically removed (1).
+
+
+#2. Data analysis
+##2.1. Import KPNA2 data in R
+```{r}
+kpna2 <- read.table("gse2990BreastcancerOneGene.txt",header=TRUE)
+head(kpna2)
+```
+
+##2.2. Transform the variable grade and node to a factor
+```{r}
+kpna2$grade <- as.factor(kpna2$grade)
+kpna2$node <- as.factor(kpna2$node)
+```
+
+##2.3. Data exploration
+Histological grade and lymph node status can both have an effect on the KPNA2 gene. Moreover, it is also possible that the effect of the histological grade changes according to the lymph node status. Therefore, we plot the gene expression for each grade x node combination. 
+
+```{r}
+library(ggplot2)
+plot1 <- ggplot(kpna2, aes(x=node:grade, y=gene,fill=grade:node))
+plot2 <- ggplot(kpna2, aes(x=age, y=gene,colour=grade:node))
+plot3 <- ggplot(kpna2, aes(x=size, y=gene,colour=grade:node))
+plot1 +geom_boxplot(outlier.shape=NA) + geom_point(position=position_jitter(width=.1))
+plot2 + geom_point()
+plot3 + geom_point()
+```
+ 
+##2.4. Hypotheses of interest
+
+##2.5. Model
+
+```{r}
+#Adapt model!
+fit <- lm(gene~grade,data=kpna2)
+plot(fit)
+```
+
+
+```{r}
+summary(fit)
+#Calculate confidence intervals for parameters of model
+confint(fit)
+```
+
+##2.6. Interpretation of model parameters and statistical tests
+
+
+##2.7. Histological grade effect in patients with affected lymph nodes. 
+
+Define contrast?
+
+###2.7.1. Test for contrast
+
+With the multcomp package you can define contrasts, linear combinations of model parameters and assess if the contrast is statistically significant. 
+
+$$H_0: \mathbf{L}^T\boldsymbol{\beta}=0$$
+vs 
+$$H_1: \mathbf{L}^T\boldsymbol{\beta}\neq 0.$$
+
+We can either use a vector L or define a formula using the parameter names. We first illustrate the latter.
+
+```{r}
+library(multcomp)
+contrast <- glht(fit, linfct = c("grade3 = 0"))
+summary(contrast)
+confint(contrast)
+```
+
+We can also define the vector ourself.
+
+```{r}
+L<-matrix(nrow=length(coef(fit)),ncol=1,0)
+rownames(L) <-names(coef(fit))
+colnames(L) <-"contrast1"
+L["grade3",1] <- 1
+L
+```
+and assess the significance of the contrast by 
+```{r}
+contrastVec <- glht(fit, linfct = t(L))
+summary(contrastVec)
+confint(contrastVec)
+```
+
+###2.7.2. Confidence intervals FC for effect of grade in patients with removed lymph nodes.
+```{r}
+
+```
+
+
+
+##2.8. Assess all hypotheses of interest and correct for multiple testing
+You can also define multiple contrasts and assess them simultaneously, then the multcomp package will automatically adjust for multiple testing.
+
+```{r}
+
+```
+
+#3. Conclusions
+
+#4. Redo the analysis by coding the linear regression analysis yourself using matrices. 
+
+##4.1. Fit
+
+##4.2. Standard errors
+
+##4.3. Inference with contrasts
+
