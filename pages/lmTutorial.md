@@ -30,7 +30,7 @@ The patients, however, do not only differ in the histologic grade, but also on t
  - compare your results with the output of the lm(.) function
 
 
-Details on the implementation can be found in the book of Faraway (chapter 2).
+Details on the implementation can be found in the book Linear Models with R of Faraway (chapter 2). A free early version of the book can be found on [Practical Regression in R](http://www.maths.bath.ac.uk/~jjf23/book/)
 
 #### 3. Software
 All developments will be done using R/Bioconductor via the [Rstudio](https://www.rstudio.com) interface. This can be installed locally or can be launched in a browser by hitting on
