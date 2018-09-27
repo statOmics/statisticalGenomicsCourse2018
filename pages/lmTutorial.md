@@ -23,14 +23,24 @@ The patients, however, do not only differ in the histologic grade, but also on t
   - Formulate all research questions of interest and translate them in terms of linear combinations of the model paramaters
   - Assess all hypothesis of interest
   - Formulate a general conclusion
+
 2. Homework: Reimplement the analysis using matrix regression
  - model parameters and contrasts of interest
  - standard errors on parameters and contrasts
  - t-test statistics on the model parameters and contrasts of interest
  - compare your results with the output of the lm(.) function
+ - Details on the implementation can be found in the book Linear Models with R of Faraway (chapter 2). A free early version of the book can be found on [Practical Regression in R](http://www.maths.bath.ac.uk/~jjf23/book/)
+
+3. Data and R markdown File
+ - You can download the data and the R-markdown file on the github repository of the course. [Resources tutorial 1](https://github.com/statOmics/statisticalGenomicsCourse/tree/master/tutorial1)
+ - You can download a file by clicking on it
+ ![Figure 1.](./figs/downloadFileFig1.png)
+
+ - Then you right click on the raw button and hitting the download linked file button.
+ ![Figure 1.](./figs/downloadFileFig2.png)
 
 
-Details on the implementation can be found in the book Linear Models with R of Faraway (chapter 2). A free early version of the book can be found on [Practical Regression in R](http://www.maths.bath.ac.uk/~jjf23/book/)
+
 
 #### 3. Software
 All developments will be done using R/Bioconductor via the [Rstudio](https://www.rstudio.com) interface. This can be installed locally or can be launched in a browser by hitting on

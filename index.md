@@ -17,6 +17,16 @@ Students can sharpen their background knowledge on Mass Spectrometry, Proteomics
 ### Target Audience
 This course is oriented towards biologists and bioinformaticians with a particular interest in differential analysis for quantitative 'omics.
 
+### Prerequisites
+The prerequisites for the Statistical Genomics course are the successful completion of a basic course of statistics that covers topics on data exploration and descriptive statistics, statistical modeling and inference: linear models, confidence intervals, t-tests, F-tests, anova, chi-squared test.
+
+The basis concepts may be revisited in the free e-book Practical Regression and Anova using R of J. Faraway. The book and additional material is freely available on
+http://www.maths.bath.ac.uk/~jjf23/book/​
+
+- Brief introduction to R: appendix C
+- Linear models: Chapter 1-3, 7, 8.1-8.2, 12
+- Anova: Chapter 16.1-16.2
+
 ---
 
 #### Topics
