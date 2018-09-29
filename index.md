@@ -43,7 +43,7 @@ Introduction
 
 Part I: Quantitative proteomics
   1. Bioinformatics for proteomics
-  - Slides: [Bioinformatics for Proteomics](open assets/martens_proteomics_bioinformatics_20171001.pdf)
+  - Slides: [Bioinformatics for Proteomics](assets/martens_proteomics_bioinformatics_20171001.pdf)
 
 Part II: Next-generation sequencing
 
