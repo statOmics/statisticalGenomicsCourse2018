@@ -1,0 +1,36 @@
+R version 3.5.0 (2018-04-23)
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+Running under: macOS Sierra 10.12.6
+
+Matrix products: default
+BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRlapack.dylib
+
+locale:
+[1] C/UTF-8/C/C/C/C
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] MSstats_3.12.3 MSqRob_0.7.5   lme4_1.1-17    Matrix_1.2-14 
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_0.12.16          bindr_0.1.1           pillar_1.2.2         
+ [4] compiler_3.5.0        nloptr_1.0.4          plyr_1.8.4           
+ [7] bitops_1.0-6          iterators_1.0.9       tools_3.5.0          
+[10] tibble_1.4.2          preprocessCore_1.42.0 nlme_3.1-137         
+[13] gtable_0.2.0          lattice_0.20-35       pkgconfig_2.0.1      
+[16] doSNOW_1.0.16         rlang_0.2.0           foreach_1.4.4        
+[19] ggrepel_0.8.0         bindrcpp_0.2.2        stringr_1.3.0        
+[22] dplyr_0.7.4           caTools_1.17.1        gtools_3.8.1         
+[25] grid_3.5.0            glue_1.2.0            data.table_1.11.2    
+[28] R6_2.2.2              snow_0.4-2            marray_1.58.0        
+[31] survival_2.42-3       minpack.lm_1.2-1      gdata_2.18.0         
+[34] limma_3.36.1          minqa_1.2.4           purrr_0.2.5          
+[37] tidyr_0.8.1           reshape2_1.4.3        ggplot2_2.2.1        
+[40] magrittr_1.5          gplots_3.0.1          scales_0.5.0         
+[43] codetools_0.2-15      MASS_7.3-50           splines_3.5.0        
+[46] randomForest_4.6-14   assertthat_0.2.0      colorspace_1.3-2     
+[49] KernSmooth_2.23-15    stringi_1.2.2         lazyeval_0.2.1       
+[52] munsell_0.4.3        

@@ -42,6 +42,8 @@ Introduction
   - Tutorial: [Linear Model Tutorial](pages/lmTutorial.md)
 
 Part I: Quantitative proteomics
+  1. Bioinformatics for proteomics
+  - Slides: [Bioinformatics for Proteomics](open assets/martens_proteomics_bioinformatics_20171001.pdf)
 
 Part II: Next-generation sequencing
 
