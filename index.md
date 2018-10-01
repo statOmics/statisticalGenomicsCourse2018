@@ -32,7 +32,7 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
 
 #### Topics
 
-Introduction
+**Introduction**
 
   1. Intro
   - Slides: [Intro](assets/intro.pdf)
@@ -47,7 +47,7 @@ Introduction
   1. Bioinformatics for proteomics
   - Slides: [Bioinformatics for Proteomics](assets/martens_proteomics_bioinformatics_20171001.pdf)
 
-Part II: Next-generation sequencing
+**Part II: Next-generation sequencing**
 
 ---
 
