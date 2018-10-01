@@ -43,7 +43,7 @@ Introduction
   - **Homework 1**: Complete the [Rmarkdown notebook](pages/tutorialI_KPNA2_solutionPartI.nb.html). The source notebook for the partial solution can be found on [Rmarkdown notebook](assets/tutorialI_KPNA2_solutionPartI.Rmd). More details can be found in [Tutorial1](pages/lmTutorial.md). 
   - **Due date Homework Sunday 14/10/2018 midnight**:  Work in groups of 4-5 students. Upload the html file from your notebook on minerva. Only upload one file per group.   
 
-Part I: Quantitative proteomics
+**Part I: Quantitative proteomics**
   1. Bioinformatics for proteomics
   - Slides: [Bioinformatics for Proteomics](assets/martens_proteomics_bioinformatics_20171001.pdf)
 
