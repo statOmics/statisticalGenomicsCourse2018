@@ -47,6 +47,13 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
   1. Bioinformatics for proteomics
   - Slides: [Bioinformatics for Proteomics](assets/martens_proteomics_bioinformatics_20171001.pdf)
 
+  2. Identification
+  - Slides:  [False Discovery Rate and Target Decoy Approach](assets/1_Identification_Evaluation_Target_Decoy_Approach.pdf)
+
+  3. Preprocessing & Analysis of Label Free Quantitative Proteomics Experiments with Simple Designs
+  - Slides: [Preprocessing](assets/2_MSqRob_data_analysisI.pdf), [Results of Preprocessing](assets/2_MSqRob_data_analysisIb.pdf)
+
+
 **Part II: Next-generation sequencing**
 
 ---
