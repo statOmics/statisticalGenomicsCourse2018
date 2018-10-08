@@ -46,6 +46,7 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
 **Part I: Quantitative proteomics**
   1. Bioinformatics for proteomics
   - Slides: [Bioinformatics for Proteomics](assets/martens_proteomics_bioinformatics_20171001.pdf)
+  - Tutorial: [Evaluating Target Decoy Quality](pages/Identification.md)  
 
   2. Identification
   - Slides:  [False Discovery Rate and Target Decoy Approach](assets/1_Identification_Evaluation_Target_Decoy_Approach.pdf)
