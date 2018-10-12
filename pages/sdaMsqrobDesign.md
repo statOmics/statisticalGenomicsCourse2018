@@ -22,29 +22,7 @@ A very powerful concept in experimental design is that of blocking [5]. In rando
 
 Figure 1. Example of a good (A) and a bad (B) design. In design A, both the green and orange treatments are divided equally within each block. That way, the treatment effect can be estimated within a block. In design B, each block contains only one treatment, so the treatment effect is entirely confounded with the blocking effect and it is thus impossible to draw meaningful conclusions on the treatment (unless one would be willing to assume that the blocking effect is negligible, which is a very strong assumption that cannot be verified based on the design).
 
-#### 3.2 Starting MSqRob
-
-When working with the online binder version, hit the binder button below:
-
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/pda/master?urlpath=rstudio)
-
-If you use the software on a more regular basis building a local docker environment is advised, (see [software page](./software4stats.md)).
-
-Upon hitting the binder button an interactive statistical programming environment will open that is running on a cloud server. In this tutorial we will not make use of the powerful R-scripting environment, but we will launch an App with a GUI instead. Open the launchMSqRobShinyApp.R file by clicking on the file in the bottom right panel.
-
-![Figure 2. Rstudio](./figs/rstudioWindowEvalDecoy.png)
-
-A novel panel opens in the topleft. Click on runApp to launch the EvalDecoy app.
-
-![Figure 3. Rstudio](./figs/rstudioWindowEvalDecoy.png)
-
-The MSqRob App is launched:
-
-![Figure 4. MSqRob Input tab](./figs/msqrobInput1.png)
-
-*Hint: Click on the question marks to get extra information about an input field.*
-
-#### 3.3 Evaluating the impact of sample size
+#### 3.2 Evaluating the impact of sample size
 18 Estrogen Receptor Positive Breast cancer tissues have been analyzed that originate from from patients treated with tamoxifen upon recurrence, 9 with good outcome (or) and 9 with poor outcome (pd).
 The proteomes have been assessed using an LTQ-Orbitrap  and the thermo output .RAW files were searched with MaxQuant (version 1.4.1.2) against the human proteome database (FASTA version 2012-09, human canonical proteome).
 
@@ -61,16 +39,18 @@ Perform an MSqRob analysis for each peptide file. What is the impact of the samp
 Explain why.
 
 
-#### 3.4. Blocking: CPTAC dataset
+#### 3.3. Blocking: CPTAC dataset
 
 The 6th study of the Clinical Proteomic Technology Assessment for Cancer (CPTAC). In this experiment, the authors spiked the Sigma Universal Protein Standard mixture 1 (UPS1) containing 48 different human proteins in a protein background of 60 ng/μL Saccharomyces cerevisiae strain BY4741 (MATa, leu2Δ0, met15Δ0, ura3Δ0, his3Δ1). Five different spike-in concentrations were used: 6A (0.25 fmol UPS1 proteins/μL), 6B (0.74 fmol UPS1 proteins/μL), 6C (2.22 fmol UPS1 proteins/μL), 6D (6.67 fmol UPS1 proteins/μL) and 6E (20 fmol UPS1 proteins/μL) [6]. The raw data files can be downloaded from https://cptac-data-portal.georgetown.edu/cptac/public?scope=Phase+I (Study 6). We limited ourselves to the data of LTQ-Orbitrap at site 86, LTQ-Orbitrap O at site 65 and LTQ-Orbitrap W at site 56. The data were searched with MaxQuant version 1.5.2.8, and detailed search settings were described in Goeminne et al. (2016) [1]. The experiment is conceived as a randomized complete block design with lab as a blocking factor. For every lab, 3 replicates are available for each concentration.
 
 The data can be found in the folder data/quantification/cptac
 
-##### 3.4.1. Which factors will you use in the mean model?
+##### 3.3.1. Which factors will you use in the mean model?
 
-##### 3.4.2. Evaluation of contrasts of interest. We would like to perform all pairwise comparisons between each of the treatments. How many contrasts do we need for this, specify each contrast
+##### 3.3.2. Evaluation of contrasts of interest. We would like to perform all pairwise comparisons between each of the treatments. How many contrasts do we need for this, specify each contrast
 
-##### 3.4.3. Interpret the log 2 transformed fold change for the top hit of the comparison involving treatment B vs A.
+##### 3.3.3. Interpret the log 2 transformed fold change for the top hit of the comparison involving treatment B vs A.
 
-##### 3.4.4. What do you observe for the comparisons involving treatment D and/or E? Can you explain this?
+##### 3.3.4. What do you observe for the comparisons involving treatment D and/or E? Can you explain this?
+
+##### 3.3.5. Evaluate the performance by using Sensitivity (true positive rate) vs FDP (False Discovery Proportion) plots

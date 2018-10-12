@@ -18,7 +18,8 @@ For proteomics experiments it is important to differentiate between experimental
 
 When working with the online binder version, hit the binder button below:
 
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/pda/master?urlpath=rstudio)
+[![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse/master?urlpath=rstudio)
+
 
 If you use the software on a more regular basis building a local docker environment is advised, (see [software page](./software4stats.md)).
 
@@ -38,7 +39,7 @@ The MSqRob App is launched:
 
 ### 2.3 The CPTAC A vs B dataset lab 3
 
-Our first case-study is a subset of the data of the 6th study of the Clinical Proteomic Technology Assessment for Cancer (CPTAC). In this experiment, the authors spiked the Sigma Universal Protein Standard mixture 1 (UPS1) containing 48 different human proteins in a protein background of 60 ng/μL Saccharomyces cerevisiae strain BY4741 (MATa, leu2Δ0, met15Δ0, ura3Δ0, his3Δ1). Two different spike-in concentrations were used: 6A (0.25 fmol UPS1 proteins/μL) and 6B (0.74 fmol UPS1 proteins/μL) [5]. The raw data files can be downloaded from https://cptac-data-portal.georgetown.edu/cptac/public?scope=Phase+I (Study 6), the processed data can be downloaded by zipping the github repository [https://github.com/statOmics/pda/tree/data](https://github.com/statOmics/pda/tree/data), in the folder data/quantification/cptacAvsB_lab3. We limited ourselves to the data of LTQ-Orbitrap W at site 56. The data were searched with MaxQuant version 1.5.2.8, and detailed search settings were described in Goeminne et al. (2016) [1]. Three replicates are available for each concentration.
+Our first case-study is a subset of the data of the 6th study of the Clinical Proteomic Technology Assessment for Cancer (CPTAC). In this experiment, the authors spiked the Sigma Universal Protein Standard mixture 1 (UPS1) containing 48 different human proteins in a protein background of 60 ng/μL Saccharomyces cerevisiae strain BY4741 (MATa, leu2Δ0, met15Δ0, ura3Δ0, his3Δ1). Two different spike-in concentrations were used: 6A (0.25 fmol UPS1 proteins/μL) and 6B (0.74 fmol UPS1 proteins/μL) [5]. The raw data files can be downloaded from https://cptac-data-portal.georgetown.edu/cptac/public?scope=Phase+I (Study 6), the processed data can be downloaded by zipping the github repository [https://github.com/statOmics/statisticalGenomicsCourse/tree/data](https://github.com/statOmics/statisticalGenomicsCourse/tree/data), in the folder data/quantification/cptacAvsB_lab3. We limited ourselves to the data of LTQ-Orbitrap W at site 56. The data were searched with MaxQuant version 1.5.2.8, and detailed search settings were described in Goeminne et al. (2016) [1]. Three replicates are available for each concentration.
 
 ### 2.3.1. The Input tab
 
@@ -107,22 +108,29 @@ What do you see upon summarization with the robust method and why would that be 
 
 ##### Intermezzo: Evaluate Summarization.
 We further explore the difference between summarization methods.
-Close the GUI and go back to the rstudio window.
-If the console is still active you can hit the stop buttom at the lower left panel.
 
-Click on the folder "rmarkdownExamples" in the right panel and open the file assessFoldChangesMaxLFQ.Rmd.
-
-![Figure 11. Intermezzo: Evaluation of Summarization](./figs/rstudioFcAnalysis.png)
-
-Click on the upload button to upload summarized data. We will first upload the maxLFQ summarization values. They can be found on
+The maxLFQ summarization values can be found in
 the downloaded data folder proteomicsShortcourseData > data > quantification > cptacAvsB_lab3 > lfqSummariesLab3.xlsx.
 
-Now the data and the script are present in rstudio.
 In R studio, we make use of an R book, which enables us to weave text and R code.
 The R book can be adaptively expanded so that you can document your analysis.
 Every data analysis step is carried out in an R chunk, which starts with
 ```{r}
 ```
+
+A sample RMarkdown notebook can be found at [assessFoldChangesMaxLFQ.Rmd](assets/rmarkdownExamples/assessFoldChangesMaxLFQ.Rmd).
+
+Note, that the header of the rmarkdown Notebook often dissapears upon download. 
+If this is the case, copy the header below, including the --- signs
+
+``` yaml
+---
+title: 'Assess fold changes based on the LFQ summaries'
+output: html_notebook
+author: Lieven Clement
+---
+```
+And paste the header at the beginning of the downloaded rmarkdown file.
 
 First hit the preview button and an html file will appear.
 The chunks can be excuted by pushing the git button.
@@ -167,31 +175,17 @@ Select an area on the plot and double click to zoom in. Double click on an unsel
 
 *Hint: The results can be saved. Open the file “project_Timestamp_CPTAC_AvsB_results.xlsx” in the default download folder of your browser*
 
+The entire analysis is also available in the RMarkdown file [cptacLab3](assets/rmarkdownExamples/cptacLab3.Rmd).
+Again make sure to include a header file to specify the RMarkdown file as an RMarkdown notebook. 
+
 #### 2.4 The Francisella dataset
 A study on the facultative pathogen Francisella tularensis was conceived by Ramond et al. (2015) [12]. F. tularensis enters the cells of its host by phagocytosis. The authors showed that F. tularensis is arginine deficient and imports arginine from the host cell via an arginine transporter, ArgP, in order to efficiently escape from the phagosome and reach the cytosolic compartment, where it can actively multiply. In their study, they compared the proteome of wild type F. tularensis (WT) to ArgP-gene deleted F. tularensis (knock-out, D8). For this exercise, we use a subset of the F. tularensis dataset where bacterial cultures were grown in biological triplicate and each sample was run on a nanoRSLC-Q Exactive PLUS instrument. The data were searched with MaxQuant version 1.4.1.2.
-The data can be found on [https://github.com/statOmics/pda/tree/data](https://github.com/statOmics/pda/tree/data).
+The data can be found on [https://github.com/statOmics/statisticalGenomicsCourse/tree/data](https://github.com/statOmics/statisticalGenomicsCourse/tree/data).
 
-##### 2.4.1. The Input tab
-Restart MSqRob GUI. The MSqRob settings for the Francisella dataset are very similar to the settings for the CPTAC dataset. Use the name “project_Francisella”. Next, upload the peptides.txt file from
-data/quantification/francisella on the pdaData repository.
-
-Generate your own experimental annotation file by clicking the Generate Annotation File tab in the right panel of the input tab. Once it is generated a new button appears to download the annotation file.
-
-Upon clicking the “Download Annotation Button” an excel file with your project name “francisella_timestamp_experimental_annotation.xlsx” is downloaded to your browsers’ default download folder.
-
-The excel file contains a row named run that includes the names of all runs that are included in the peptides.txt file. We now have to complete the file with information on the experimental design of the study. In our case, we only need to include one additional column with the genotype of the study (wild type, WT or knock out, D8). Once this has been done, you can use your experimental annotation file for your analysis.
-
-##### 2.4.2. The Preprocessing tab
-The preprocessing part is analogous as for the CPTAC example.
-
-##### 2.4.3. The Summarization tab
-
-The summarization part is analogous as for the CPTAC example.
-
-##### 2.4.4. The Quantification tab
-
-We again group by “Proteins”. The “Annotation columns” field allows retaining extra annotation columns that one might have added to the peptides file. Add “Protein names” and “GI number” to the “Annotation columns” field.
+Modify the Rmarkdown file for the cptac analysis to analyse the Francisella dataset
 
 Which contrast do we want to test now? [2.4.4a]
 
 Give the interpretation of the contrast for your top hit? [2.4.4b]
+
+
