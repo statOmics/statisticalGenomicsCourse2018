@@ -175,7 +175,7 @@ Select an area on the plot and double click to zoom in. Double click on an unsel
 
 *Hint: The results can be saved. Open the file “project_Timestamp_CPTAC_AvsB_results.xlsx” in the default download folder of your browser*
 
-The entire analysis is also available in the RMarkdown file [cptacLab3](https://github.com/statOmics/statisticalGenomicsCourse/assets/rmarkdownExamples/cptacLab3.Rmd).
+The entire analysis is also available in the RMarkdown file [cptacLab3](./assets/rmarkdownExamples/cptacLab3.Rmd).
 Again make sure to include a header file to specify the RMarkdown file as an RMarkdown notebook. 
 
 #### 2.4 The Francisella dataset
