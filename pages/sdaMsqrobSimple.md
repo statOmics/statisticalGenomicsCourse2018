@@ -118,7 +118,7 @@ Every data analysis step is carried out in an R chunk, which starts with
 ```{r}
 ```
 
-A sample RMarkdown notebook can be found at [assessFoldChangesMaxLFQ.Rmd](assets/rmarkdownExamples/assessFoldChangesMaxLFQ.Rmd).
+A sample RMarkdown notebook can be found at [assessFoldChangesMaxLFQ.Rmd](./assets/rmarkdownExamples/assessFoldChangesMaxLFQ.Rmd).
 
 Note, that the header of the rmarkdown Notebook often dissapears upon download. 
 If this is the case, copy the header below, including the --- signs
