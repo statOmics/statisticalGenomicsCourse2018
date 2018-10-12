@@ -118,7 +118,7 @@ Every data analysis step is carried out in an R chunk, which starts with
 ```{r}
 ```
 
-A sample RMarkdown notebook can be found at [assessFoldChangesMaxLFQ.Rmd](./assets/rmarkdownExamples/assessFoldChangesMaxLFQ.Rmd).
+A sample RMarkdown notebook can be found at [assessFoldChangesMaxLFQ.Rmd](https://statomics.github.io/statisticalGenomicsCourse/assets/rmarkdownExamples/assessFoldChangesMaxLFQ.Rmd).
 
 Note, that the header of the rmarkdown Notebook often dissapears upon download. 
 If this is the case, copy the header below, including the --- signs
@@ -175,7 +175,7 @@ Select an area on the plot and double click to zoom in. Double click on an unsel
 
 *Hint: The results can be saved. Open the file “project_Timestamp_CPTAC_AvsB_results.xlsx” in the default download folder of your browser*
 
-The entire analysis is also available in the RMarkdown file [cptacLab3](./assets/rmarkdownExamples/cptacLab3.Rmd).
+The entire analysis is also available in the RMarkdown file [cptacLab3](https://statomics.github.io/statisticalGenomicsCourse/assets/rmarkdownExamples/cptacLab3.Rmd).
 Again make sure to include a header file to specify the RMarkdown file as an RMarkdown notebook. 
 
 #### 2.4 The Francisella dataset
