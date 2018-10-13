@@ -55,6 +55,9 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
   3. Preprocessing & Analysis of Label Free Quantitative Proteomics Experiments with Simple Designs
   - Slides: [Preprocessing](assets/2_MSqRob_data_analysisI.pdf), [Results of Preprocessing](assets/2_MSqRob_data_analysisIb.pdf)
   - Tutorial: [preprocessing](pages/sdaMsqrobSimple.md)
+  
+  4. Statistical Inference & Analysis of Experiments with Factorial Designs
+  - Slides: [Inference](assets/2_MSqRob_data_analysisII.pdf)  
 
 **Part II: Next-generation sequencing**
 
