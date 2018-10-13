@@ -58,6 +58,7 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
   
   4. Statistical Inference & Analysis of Experiments with Factorial Designs
   - Slides: [Inference](assets/2_MSqRob_data_analysisII.pdf)  
+  - [Robust Regression Notebook](pages/robustRegression.nb.html)
 
 **Part II: Next-generation sequencing**
 
