@@ -5,32 +5,65 @@ title: Software for Stats Tutorials
 
 There are three options to work with the software:
 
-1. Using an online binder docker environment that launches R studio immediately. Remark: This tends to be unstable in combination with shiny Apps, the App gets disconnected when there is no browser activity in the App window.
-2. Using an online binder docker environment that launches a Jupyter binder environment. See Note above.
-3. Using an offline docker that launches a Jupyter environment. Most stable way to
+1. Install RStudio locally
+2. Using an online binder docker environment that launches R studio immediately. Remark: This tends to be unstable in combination with shiny Apps, the App gets disconnected when there is no browser activity in the App window.
+3. Using an online binder docker environment that launches a Jupyter binder environment. See Note above.
+4. Using an offline docker that launches a Jupyter environment. Most stable way
+5. Portable windows R/Rstudio/MSqRob version: [Download portable windows version](https://users.ugent.be/~lclement/MSqRobPortable.zip)
 
-#### Getting started
+### 1. Local installation
+
+- Install [R/Rstudio](https://www.rstudio.com/products/rstudio)
+- Install Bioconductor packages:
+``` yaml
+source("http://bioconductor.org/biocLite.R")
+biocLite()
+```
+- Install MSnbase
+``` yaml
+biocLite(“MSnbase”)
+```
+- Install devtools and MSqRob
+``` yaml
+biocLite("devtools")
+devtools::install_github("statOmics/MSqRob@MSqRob0.7.5")
+```
+
+- Download and unzip pda master tree
+	- Go to the pda site on github: [https://github.com/statOmics/statisticalGenomicsCourse](https://github.com/statOmics/statisticalGenomicsCourse)
+	- Click on the clone/download button and select download zip 
+![](./fig/downloadPdaMasterTree.png)
+	- Unzip the repository
+	- Open Rstudio and go to the unzipped folder
+
+
+### 2. Getting started with online Docker image
 
 - Launch an R studio interface in an R docker along with bioconductor packages for proteomics.
 
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/pda/master?urlpath=rstudio)
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse/master?urlpath=rstudio)
 
 -  Alternatively, you can launch R studio via the jupyter binder environment:
 
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/pda/master)
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse/master)
 
 Once inside Jupyter Notebook, RStudio Server should be an option under the menu
 "New":
 
 ![](./figs/rstudio-session.jpg)
 
-- You can install your own local docker by downloading the entire repository and invoking
+### 3. Install the Docker locally
+
+#### 3.1 Generate docker image
+
+- You can install your own local docker by downloading the entire repository and invoking in a console:
 
 ```
 docker build <path to proteomicsShortCourse directory> -t msqrob_docker
 ```
 
-#### Install the Docker on local machines
+
+#### 3.2 Install the Docker on local machines
 
 1. Open a terminal
 ![Figure Launch Docker 1](./figs/installDocker1.png)
@@ -52,7 +85,7 @@ Then we give the full path to the docker, which is available on the share.
 
 Now the docker installations starts.
 
-#### Launch the Docker
+#### 3.3 Launch the Docker
 
 1. Open a terminal
 
@@ -72,7 +105,7 @@ We can interact with the docker via a web browser.
 
 3. Open Firefox
 
-![Figure Launch Docker 1](pages/figs/launchDocker1b.png)
+![Figure Launch Docker 1](./figs/launchDocker1b.png)
 
 A new window will appear where you have to fill a the token.
 You can copy the link token from the terminal.
@@ -103,11 +136,18 @@ Press enter! Then the jupyter hub environment will launch.
 Select New>Rstudio Session to launch the statistical software R.
 Now an interactive statistical programming environment will open in the browser that runs on a cloud server.
 
-#### Close the Docker
+### Close the Docker
 
 Only if you work with a local Docker.
 1. Close RStudio
 2. Log off the jupyter environment
+3. Open a new terminal and type the command
+
+```
+sudo docker stop c924e5fb54b5
+```
+where you replace `c924e5fb54b5` with the name of your docker.
+
 3. Open a new terminal and type the command
 
 ```
