@@ -1,5 +1,4 @@
 install.packages('rjson')
-install.packages("shinydashboard")
 source("https://bioconductor.org/biocLite.R")
 biocLite("shiny")
 biocLite("shinyjs")
