@@ -30,6 +30,8 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
 
 ---
 
+#### Software
+
 #### Topics
 
 **Introduction**
@@ -44,6 +46,12 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
   - **Due date Homework Sunday 14/10/2018 midnight**:  Work in groups of 4-5 students. Upload the html file from your notebook on minerva. Only upload one file per group.   
 
 **Part I: Quantitative proteomics**
+ 
+  0. Software and Data
+  - [Install and Launch Statistical Software](pages/software4stats.md)
+  - [Download Tutorial Data](https://github.com/statOmics/pda/tree/data)
+ 
+
   1. Bioinformatics for proteomics
   - Slides: [Bioinformatics for Proteomics](assets/martens_proteomics_bioinformatics_20171001.pdf)
 

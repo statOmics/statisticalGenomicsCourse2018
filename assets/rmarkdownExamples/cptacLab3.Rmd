@@ -26,8 +26,8 @@ With the grepEcols function we find the columns that are containing the expressi
 library(MSqRob)
 library(MSnbase)
 library(tidyverse)
-peptidesFile <- "peptides.txt"
-proteinGroupsFile <- "proteingroups.txt"
+peptidesFile <- "https://raw.githubusercontent.com/statOmics/statisticalGenomicsCourse/data/quantification/cptacAvsB_lab3/peptides.txt"
+proteinGroupsFile <-"https://raw.githubusercontent.com/statOmics/statisticalGenomicsCourse/data/quantification/cptacAvsB_lab3/proteinGroups.txt"
 ecols<-grepEcols(peptidesFile, "Intensity ", split = "\t")
 ```
 
@@ -150,7 +150,6 @@ protData<-combineFeatures(pepData,groupBy=fData(pepData)$protein,fun="robust")
 ```
 
 ```{r}
-library(limma)
 plotMDS(exprs(protData))
 ```
 
@@ -212,3 +211,27 @@ print(plot1 +geom_boxplot(outlier.shape=NA) + geom_point(position=position_jitte
 }
 ```
 
+Sensitivity FDP plots
+
+Because we know the ground truth for the cptac study, i.e. we know that only the spike-in proteins (UPS) are differentially expressed, we can calculate 
+
+- the sensitivity or true positive rate (TPR), the proportion of actual positives that are correctly identified, in the protein list that we return
+$$TPR=\frac{TP}{\text{#actual positives}}$$
+- false discovery proportion (FPD): fraction of false positives in the protein list that we return:
+$$FPD=\frac{FP}{FP+TP}$$
+
+Instead of only calculating that for the protein list at a particular FDR, we can do this for all possible FDR cutoffs so that we get an overview of the quality of the ranking of the proteins in the protein list. 
+
+```{r}
+tests<-tests %>% 
+mutate(protName=rownames(.),
+ups=grepl("ups",protName),
+FDP=cumsum(!ups)/(1:length(ups)),
+TPR=cumsum(ups)/sum(ups))
+
+rownames(tests)<-tests$protName
+
+ggplot(tests,aes(x=FDP,y=TPR)) + geom_path() +geom_vline(xintercept=0.05,lty=2) + geom_point(data=tests[sum(tests$signif,na.rm=TRUE),],aes(x=FDP,y=TPR),cex=2)
+```
+
+We observe that there is a good FDR control: the FDP at the 5% FDR level is indeed close to 0.05.
