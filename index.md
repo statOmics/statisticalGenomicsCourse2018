@@ -65,7 +65,8 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
   - Tutorial: [preprocessing](pages/sdaMsqrobSimple.md)
   
   4. Statistical Inference & Analysis of Experiments with Factorial Designs
-  - Slides: [Inference](assets/2_MSqRob_data_analysisII.pdf)  
+  - Slides: [Inference](assets/2_MSqRob_data_analysisII.pdf) 
+  - Tutorial: [Statistical Data Analysis with MSqRob for Factorial Designs](pages/sdaMsqrobDesign.md)
   - [Robust Regression Notebook](pages/robustRegression.nb.html)
 
 **Part II: Next-generation sequencing**

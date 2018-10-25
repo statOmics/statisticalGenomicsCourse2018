@@ -54,3 +54,9 @@ The data can be found in the folder data/quantification/cptac
 ##### 3.3.4. What do you observe for the comparisons involving treatment D and/or E? Can you explain this?
 
 ##### 3.3.5. Evaluate the performance by using Sensitivity (true positive rate) vs FDP (False Discovery Proportion) plots
+
+##### Homework
+
+- Extend the Rmarkdown file [cptacLab3](https://statomics.github.io/statisticalGenomicsCourse/assets/rmarkdownExamples/cptacLab3.Rmd) so as to analyse the full CPTAC studie. 
+- Add an additional section to answer each of the questions from 3.3.1-3.3.5. 
+
