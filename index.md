@@ -72,10 +72,10 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
 **Part II: Next-generation sequencing**
 
   1. Introduction to RNA-seq
-  - Slides: [Intro to RNA-seq](assets/rnaseq1.pdf) 
+  - Slides: [Intro to RNA-seq](assets/rna-seq1.pdf) 
 
   2. Algorithms and inference for count regression methods for RNA-seq
-  - Slides: [Algorithms and inference for RNA-seq](assets/rnaseq2.pdf) 
+  - Slides: [Algorithms and inference for RNA-seq](assets/rna-seq2.pdf) 
 
 ---
 
