@@ -74,7 +74,7 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
   1. Introduction to RNA-seq
   - Slides: [Intro to RNA-seq](assets/rna-seq1.pdf) 
 
-  2. Algorithms and inference for count regression methods for RNA-seq
+  2. Algorithms and inference for RNA-seq differential analysis
   - Slides: [Algorithms and inference for RNA-seq](assets/rna-seq2.pdf) 
 
 ---
