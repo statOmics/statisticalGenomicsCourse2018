@@ -68,11 +68,14 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
   - Slides: [Inference](assets/2_MSqRob_data_analysisII.pdf) 
   - Tutorial: [Statistical Data Analysis with MSqRob for Factorial Designs](pages/sdaMsqrobDesign.md)
   - [Robust Regression Notebook](pages/robustRegression.nb.html)
+  - **Homework 2**: Perform the analysis for the entire CPTAC6 spike-in study. More details can be found in the [tutorial page](pages/sdaMsqrobDesign.md). Also assess the performance using MA-plots.  
+  - **Due date Howework 2 Sunday 11/11/2018 midnight**:  Work in groups of 4-5 students. Upload the html file from your notebook on minerva. Only upload one file per group.   
 
 **Part II: Next-generation sequencing**
 
   1. Introduction to RNA-seq
   - Slides: [Intro to RNA-seq](assets/rna-seq1.pdf) 
+  - Tutorial: [Intro to RNA-seq](pages/introToRNA-seqDE.html)
 
   2. Algorithms and inference for RNA-seq differential analysis
   - Slides: [Algorithms and inference for RNA-seq](assets/rna-seq2.pdf) 

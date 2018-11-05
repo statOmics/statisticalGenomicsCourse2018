@@ -1,0 +1,182 @@
+---
+title: "RNA-Seq of pathogen inoculated arabidopsis with batch effects"
+output:
+  html_notebook: default
+---
+
+
+```{r,echo=FALSE}
+library(edgeR)
+library(gplots)
+library(RColorBrewer)
+```
+
+#1.Introduction
+This file is adapted from the edgeR userguide. 
+Note, that the current version of the edgeR userguide is adopting the quasi-likelihood pipeline in edgeR. 
+We will use the conventional likelihood based pipeline. 
+
+You can open the userguide by:
+```
+edgeRUsersGuide()
+```
+
+This case study re-analyses Arabidopsis thaliana RNA-Seq data described by Cumbie et al. 
+Summarized count data is available as a data object in the CRAN package NBPSeq comparing $\Delta$hrcC challenged and mock-inoculated samples. Samples were collected in three batches, and adjustment for batch effects proves to be important. The aim of the analysis therefore is to detect genes differentially expressed in response to $\Delta$hrcC challenge, while correcting for any differences between the batches.
+
+#2. RNA samples
+Pseudomonas syringae is a bacterium often used to study plant reactions to pathogens. In this experiment, six-week old Arabidopsis plants were inoculated with the $\Delta$hrcC mutant of P. syringae, after which total RNA was extracted from leaves. 
+Control plants were inoculated with a mock pathogen.
+Three biological replicates of the experiment were conducted at separate times and using independently grown plants and bacteria.
+The six RNA samples were sequenced one per lane on an Illumina Genome Analyzer. 
+Reads were aligned and summarized per gene using GENE-counter.
+The reference genome was derived from the TAIR9 genome release (www.arabidopsis.org).
+
+#3. Loading the data
+Load the data:
+```{r}
+library(NBPSeq)
+data(arab)
+head(arab)
+```
+
+There are two experimental factors, treatment (hrcc vs mock) and the time that each replicate was conducted.
+We relevel the treatments so that the mock treatment becomes the reference class.
+```{r}
+treat = factor(substring(colnames(arab),1,4))
+treat = relevel(treat, ref="mock")
+time = factor(substring(colnames(arab),5,5))
+```
+
+We then create a DGEList object:
+```{r}
+y = DGEList(counts=arab, group=treat)
+y$sample
+```
+
+#4. Filtering and normalization
+There is no purpose in analysing genes that are not expressed in either experimental condi- tion. We consider a gene to be expressed at a reasonable level in a sample if it has at least two counts for each million mapped reads in that sample. This cutoff is ad hoc, but serves to require at least 4-6 reads in this case. Since this experiment has three replicates for each condition, a gene should be expressed in at least three samples if it responds to at least one condition. Hence we keep genes with at least two counts per million (CPM) in at least three samples:
+```{r}
+ keep = rowSums(cpm(y)>2) >= 3
+ table(keep)
+ y = y[keep, , keep.lib.sizes=FALSE]
+```
+
+Note that the filtering does not use knowledge of what treatment corresponds to each sample, so the filtering does not bias the subsequent differential expression analysis.
+The TMM normalization is applied to account for the compositional biases:
+```{r}
+y = calcNormFactors(y)
+y$samples
+```
+
+#5. Data exploration
+An MDS plot shows the relative similarities of the six samples.
+```{r}
+plotMDS(y)
+```
+
+Distances on an MDS plot of a DGEList object correspond to leading log-fold-change between each pair of samples. Leading log-fold-change is the root-mean-square average of the largest log2-fold-changes between each pair of samples. Each pair of samples extracted at each time tend to cluster together, suggesting a batch effect. The hrcc treated samples tend to be below the mock samples for each time, suggesting a treatment effect within each time. The two samples at time 1 are less consistent than at times 2 and 3.
+
+#6. The design matrix
+Before we fit GLMs, we need to define our design matrix based on the experimental design. We want to test for differential expressions between $\Delta$hrcC challenged and mock-inoculated samples within batches, i.e. adjusting for differences between batches. In statistical terms, this is an additive linear model. So the design matrix is created as:
+
+```{r}
+design = model.matrix(~time+treat)
+rownames(design) = colnames(y)
+design
+```
+
+
+#7. Estimating the dispersion
+Estimate the genewise dispersion estimates over all genes, allowing for a possible abundance trend. The estimation is also robustified against potential outlier genes.
+
+```{r}
+y <- estimateDisp(y, design, robust=TRUE)  
+y$common.dispersion
+plotBCV(y)
+```
+
+The square root of dispersion is the coefficient of biological variation (BCV). The common BCV is on the high side, considering that this is a designed experiment using genetically identical plants. The trended dispersion shows a decreasing trend with expression level. At low logCPM, the dispersions are very large indeed.
+
+
+
+# Differential expression
+##Fit model and Goodness of Fit test
+Now we test for significant differential expression in each gene.
+
+```{r}
+fit = glmFit(y,design)
+gof(fit,plot=TRUE)
+```
+As usual when using statistical models, we would like to know how well our selected model fits the data. We can assess the goodness of our NB GLM with a given dispersion value computing the deviance statistics and comparing them to a chi-square distribution.
+We can visually assess the goodness of fit using quantile-quantile plots. Here the deviance goodness-of-fit statistics (chi-square distributed) is transformed to normality and a normal QQ-plot is produced for the NB GLMs using common and tagwise dispersions.
+These QQ-plots show only deviations to smaller values than expected. 
+These indicates no lack of fit. 
+We have lack of fit if the sample quantiles are larger than the theoretical quantiles. 
+The statistics with deviations to smaller values might be an indication for overfitting.
+
+##Check for batch effect
+First we check whether there was a genuine need to adjust for the experimental times.
+We do this by testing for differential expression between the three times.
+There is considerable differential expression, justifying our decision to adjust for the batch effect.
+
+
+```{r}
+batch <- glmLRT(fit, coef=2:3)
+topTags(batch)
+FDR=p.adjust(batch$table$PValue,method="BH")
+sum(FDR<0.05)
+```
+
+Now conduct tests for the pathogen effect and show the top genes. 
+By default, the test is for the last coefficient in the design matrix, which in this case is the treatment effect:
+```{r}
+pathogen <- glmLRT(fit)
+topTags(pathogen)
+```
+
+Here's a closer look at the individual counts-per-million for the top genes. The top genes are very consistent across the three replicates:
+```{r}
+top <- rownames(topTags(pathogen))
+cpm(y)[top,]
+```
+
+The total number of genes significantly up-regulated or down-regulated at 5% FDR is summarized as follows:
+```{r}
+summary(dt <- decideTestsDGE(pathogen))
+```
+
+##Plots
+
+We can pick out which genes are DE:
+```{r}
+isDE <- as.logical(dt)
+DEnames <- rownames(y)[isDE]
+```
+
+###MA-plot
+Then we can plot all the logFCs against average count size, highlighting the DE genes:
+```{r}
+plotSmear(pathogen, de.tags=DEnames)
+abline(h=c(-1,1), col="blue")
+```
+
+###Volcanoplot 
+Note, that the parameters of the models are still in the natural log.
+So the fold changes are equal to: parameter*log2(exp(1))
+
+```{r}
+pathogen$coefficients[top,]
+topTags(pathogen)
+pathogen$coefficients[top,]*log2(exp(1))
+```
+
+
+```{r}
+plot(pathogen$coefficients[,"treathrcc"]*log2(exp(1)),-log10(pathogen$table$PValue),pch=19,cex=.2,xlab=expression(paste(log[2],"(FC)",sep="")),ylab=expression(paste("-",log[10],"(p)",sep="")))
+points(pathogen$coefficients[DEnames,"treathrcc"]*log2(exp(1)),-log10(pathogen$table[DEnames,"PValue"]),col=2)
+abline(v=c(-1,1), col="blue")
+```
+
+
+
