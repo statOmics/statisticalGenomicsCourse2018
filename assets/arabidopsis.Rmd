@@ -43,29 +43,29 @@ head(arab)
 There are two experimental factors, treatment (hrcc vs mock) and the time that each replicate was conducted.
 We relevel the treatments so that the mock treatment becomes the reference class.
 ```{r}
-treat = factor(substring(colnames(arab),1,4))
-treat = relevel(treat, ref="mock")
-time = factor(substring(colnames(arab),5,5))
+treat <- factor(substring(colnames(arab),1,4))
+treat <- relevel(treat, ref="mock")
+time <- factor(substring(colnames(arab),5,5))
 ```
 
 We then create a DGEList object:
 ```{r}
-y = DGEList(counts=arab, group=treat)
+y <- DGEList(counts=arab, group=treat)
 y$sample
 ```
 
 #4. Filtering and normalization
 There is no purpose in analysing genes that are not expressed in either experimental condi- tion. We consider a gene to be expressed at a reasonable level in a sample if it has at least two counts for each million mapped reads in that sample. This cutoff is ad hoc, but serves to require at least 4-6 reads in this case. Since this experiment has three replicates for each condition, a gene should be expressed in at least three samples if it responds to at least one condition. Hence we keep genes with at least two counts per million (CPM) in at least three samples:
 ```{r}
- keep = rowSums(cpm(y)>2) >= 3
+ keep <- rowSums(cpm(y)>2) >= 3
  table(keep)
- y = y[keep, , keep.lib.sizes=FALSE]
+ y <- y[keep, , keep.lib.sizes=FALSE]
 ```
 
 Note that the filtering does not use knowledge of what treatment corresponds to each sample, so the filtering does not bias the subsequent differential expression analysis.
 The TMM normalization is applied to account for the compositional biases:
 ```{r}
-y = calcNormFactors(y)
+y <- calcNormFactors(y)
 y$samples
 ```
 
@@ -81,8 +81,8 @@ Distances on an MDS plot of a DGEList object correspond to leading log-fold-chan
 Before we fit GLMs, we need to define our design matrix based on the experimental design. We want to test for differential expressions between $\Delta$hrcC challenged and mock-inoculated samples within batches, i.e. adjusting for differences between batches. In statistical terms, this is an additive linear model. So the design matrix is created as:
 
 ```{r}
-design = model.matrix(~time+treat)
-rownames(design) = colnames(y)
+design <- model.matrix(~time+treat)
+rownames(design) <- colnames(y)
 design
 ```
 
@@ -105,7 +105,7 @@ The square root of dispersion is the coefficient of biological variation (BCV). 
 Now we test for significant differential expression in each gene.
 
 ```{r}
-fit = glmFit(y,design)
+fit <- glmFit(y,design)
 gof(fit,plot=TRUE)
 ```
 As usual when using statistical models, we would like to know how well our selected model fits the data. We can assess the goodness of our NB GLM with a given dispersion value computing the deviance statistics and comparing them to a chi-square distribution.
