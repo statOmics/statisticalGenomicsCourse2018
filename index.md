@@ -74,7 +74,7 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
 **Part II: Next-generation sequencing**
 
   1. Introduction to RNA-seq
-  - Slides: [Intro to RNA-seq](assets/rna-seq1.pdf), [Stagewise testing](assets/stagewiseTesting.pdf) 
+  - Slides: [Intro to RNA-seq](assets/rna-seq1.pdf), [Multiple testing](assets/multipleTesting.pdf), [Stagewise testing](assets/stagewiseTesting.pdf) 
   - Tutorial: [Intro to RNA-seq](pages/introToRNA-seqDE.html), [Temporary Hammer Analysis](pages/hammer_tmp.nb.html)
 
   2. Algorithms and inference for RNA-seq differential analysis
