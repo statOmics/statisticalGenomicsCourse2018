@@ -86,7 +86,7 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
 
 **Part II: Project**
 
-  - Information on the projects can be found on [Minerva](https://minerva.ugent.be/main/course_home/course_home.php?cidReq=C00369402018)
+  - Information on the projects can be found on [Minerva](https://minerva.ugent.be)
 
 ---
 
