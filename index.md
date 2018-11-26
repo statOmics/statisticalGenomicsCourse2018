@@ -82,7 +82,7 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
   - Notebook with derivations and implementation of IRWLS for Poisson regression: [html](pages/poissonIRWLS.html), [pdf](assets/poissonIRWLS.pdf), [Rmd](assets/poissonIRWLS.Rmd)
 
   3. scRNA-seq: Account for excess zero's
-  - Slides
+  - Slides: [scRNA-seq](assets/scRNA-seq.pdf)
   - Rmd: [zinbwave.rmd](assets/zinbwave.Rmd) 
   
 
