@@ -81,6 +81,11 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
   - Slides: [Algorithms and inference for RNA-seq](assets/rna-seq2.pdf)
   - Notebook with derivations and implementation of IRWLS for Poisson regression: [html](pages/poissonIRWLS.html), [pdf](assets/poissonIRWLS.pdf), [Rmd](assets/poissonIRWLS.Rmd)
 
+  3. scRNA-seq: Account for excess zero's
+  - Slides
+  - Rmd: [zinbwave.rmd](assets/zinbwave.Rmd) 
+  
+
   3. Reading Material
   - [Reading Material](pages/rnaSeqLiterature.md)  
 

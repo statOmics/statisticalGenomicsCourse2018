@@ -1,0 +1,48 @@
+---
+title: "scRNA-seq data analysis while addressing overexcess zeros."
+output: html_notebook
+---
+
+```{r}
+library(Biobase)
+library(zinbwave)
+library(BiocParallel)
+library(doParallel)
+library(genefilter)
+```
+
+## importing the data
+
+Data at [https://github.com/statOmics/zingeR/raw/master/data/islamEset.rda](https://github.com/statOmics/zingeR/raw/master/data/islamEset.rda)
+
+```{r}
+load("~/Downloads/islamEset.rda")
+islamHlp <- exprs(islamEset)[9:nrow(exprs(islamEset)),] #first 8 are spike-ins.
+cellType <- pData(islamEset)[,"cellType"]
+```
+
+## Zinbwave
+```{r}
+
+NCORES <- 2
+registerDoParallel(NCORES)
+register(DoparParam())
+
+
+counts <-  #input expression data
+design <- model.matrix() #input design matrix
+
+zinb <- zinbFit(counts, X = design, commondispersion = TRUE, epsilon=1e12)
+```
+## Edge R with weights
+```{r}
+library(edgeR)
+y <- DGEList(counts)
+y <- edgeR::calcNormFactors(y)
+#Calculate weights and import them in edgeR object
+y$weights <- computeObservationalWeights(zinb, y$counts)
+```
+
+## Perform regular edgeR analysis on object with weights
+
+## Compare results with regular edgeR analysis without weights
