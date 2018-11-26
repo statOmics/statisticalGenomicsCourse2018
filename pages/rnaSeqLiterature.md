@@ -8,7 +8,7 @@ Below you can find the papers with additional background information on the tool
 ## RNA-seq Data Analysis: Basics
 
 - RNA-seq review paper: [Van den Berge et al. (2018). RNA sequencing data: hitchhiker's guide to expression analysis. Peer J. Preprint](https://peerj.com/preprints/27283/)
-- Sequencing does not remove biological variability: [Hansen et al. (2011). Sequencing technology does not eliminate biological variability. Nature biotechnology, 29(7): 572–573.] (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3137276/)
+- Sequencing does not remove biological variability: [Hansen et al. (2011). Sequencing technology does not eliminate biological variability. Nature biotechnology, 29(7): 572–573.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3137276/)
 - Core paper on edgeR: [McCarthy et al. (2012). Differential expression analysis of multifactor RNA-Seq experiments with respect to biological variation. Nucleic Acids Research, 40(10), 4288–4297](https://academic.oup.com/nar/article/40/10/4288/2411520)
 - Core paper on DESeq2: [Love et al. (2016). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 15:550](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8)
 - Core paper on Limma-voom: [Law et al. (2014). voom: precision weights unlock linear model analysis tools for RNA-seq read counts. Genome Biology, 15:R29](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-2-r29)
@@ -23,7 +23,7 @@ Below you can find the papers with additional background information on the tool
 
 ## Single-cell RNA-seq: 
 
-- Observation weights: [Van den Berge et al. (2018). Observation weights unlock bulk RNA-seq tools for zero inflation and single-cell applications. Genome Biology, 19:24.](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1406-4)
+- Zero-inflation: [Van den Berge et al. (2018). Observation weights unlock bulk RNA-seq tools for zero inflation and single-cell applications. Genome Biology, 19:24.](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1406-4)
 
 ## Transcript level alignment and inference: 
 
