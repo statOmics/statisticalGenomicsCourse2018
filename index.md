@@ -78,7 +78,15 @@ http://www.maths.bath.ac.uk/~jjf23/book/​
   - Tutorial: [Intro to RNA-seq](pages/introToRNA-seqDE.html), [Temporary Hammer Analysis](pages/hammer_tmp.nb.html)
 
   2. Algorithms and inference for RNA-seq differential analysis
-  - Slides: [Algorithms and inference for RNA-seq](assets/rna-seq2.pdf) 
+  - Slides: [Algorithms and inference for RNA-seq](assets/rna-seq2.pdf)
+  - Notebook with derivations and implementation of IRWLS for Poisson regression: [html](pages/poissonIRWLS.html), [pdf](assets/poissonIRWLS.pdf), [Rmd](assets/poissonIRWLS.Rmd)
+
+  3. Reading Material
+  - [Reading Material](pages/rnaSeqLiterature.md)  
+
+**Part II: Project**
+
+  - Information on the projects can be found on [Minerva](https://minerva.ugent.be/main/course_home/course_home.php?cidReq=C00369402018)
 
 ---
 
