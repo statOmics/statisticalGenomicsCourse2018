@@ -76,7 +76,8 @@ The basis concepts may be revisited in the free e-book Practical Regression and 
 
   3. scRNA-seq: Account for excess zero's
   - Slides: [scRNA-seq](assets/scRNA-seq.pdf)
-  - Rmd: [zinbwave.rmd](assets/zinbwave.Rmd) 
+  - Rmd: [zinbwave.rmd](assets/zinbwave.Rmd)
+  - tutorial: [scRNA-seq tutorial](pages/scRNAseq.html) 
   
 
   3. Reading Material
