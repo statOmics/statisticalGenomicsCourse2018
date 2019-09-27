@@ -30,8 +30,8 @@ devtools::install_github("statOmics/MSqRob@MSqRob0.7.5")
 ```
 
 - Download and unzip pda master tree
-	- Go to the pda site on github: [https://github.com/statOmics/statisticalGenomicsCourse](https://github.com/statOmics/statisticalGenomicsCourse)
-	- Click on the clone/download button and select download zip 
+	- Go to the pda site on github: [https://github.com/statOmics/statisticalGenomicsCourse2018](https://github.com/statOmics/statisticalGenomicsCourse2018)
+	- Click on the clone/download button and select download zip
 ![](./fig/downloadPdaMasterTree.png)
 	- Unzip the repository
 	- Open Rstudio and go to the unzipped folder
@@ -41,11 +41,11 @@ devtools::install_github("statOmics/MSqRob@MSqRob0.7.5")
 
 - Launch an R studio interface in an R docker along with bioconductor packages for proteomics.
 
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse/master?urlpath=rstudio)
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse2018/master?urlpath=rstudio)
 
 -  Alternatively, you can launch R studio via the jupyter binder environment:
 
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse/master)
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse2018/master)
 
 Once inside Jupyter Notebook, RStudio Server should be an option under the menu
 "New":

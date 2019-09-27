@@ -55,7 +55,7 @@ Figure 2. Illustration of the target and decoy distributions, in grey the histog
 
 When working with the online binder version, hit the binder button below:
 
-[![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse/master?urlpath=rstudio)
+[![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse2018/master?urlpath=rstudio)
 
 
 If you use the software on a more regular basis building a local docker environment is advised, (see [software page](./software4stats.md)).
@@ -76,7 +76,7 @@ The App is launched.
 
 The Pyrococcus furiosus (strain ATCC 43587 / DSM 3638 / JCM 8422 / Vc1) reference proteome. The resulting database has 2,051 proteins in total (https://www.uniprot.org/uniprot/?query=taxonomy:186497, taxonomy:"Pyrococcus furiosus (strain ATCC 43587 / DSM 3638 / JCM 8422 / Vc1) [186497]").
 
-The data can be found on [https://github.com/statOmics/statisticalGenomicsCourse/tree/data](https://github.com/statOmics/statisticalGenomicsCourse/tree/data).
+The data can be found on [https://github.com/statOmics/statisticalGenomicsCourse2018/tree/data](https://github.com/statOmics/statisticalGenomicsCourse2018/tree/data).
 Use the mzid file for the pyrococcus example, which can be found at data/identification/pyrococcusMSGF+.mzid
 When the file is uploaded, push the "Process mzid file" button. It will take a while to process the file and you will see that the "Process mzid file" becomes light blue and that an activity indicator appears next to the button.
 

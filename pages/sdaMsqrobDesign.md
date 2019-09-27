@@ -57,6 +57,5 @@ The data can be found in the folder data/quantification/cptac
 
 ##### Homework
 
-- Extend the Rmarkdown file [cptacLab3](https://statomics.github.io/statisticalGenomicsCourse/assets/rmarkdownExamples/cptacLab3.Rmd) so as to analyse the full CPTAC studie. 
-- Add an additional section to answer each of the questions from 3.3.1-3.3.5. 
-
+- Extend the Rmarkdown file [cptacLab3](https://statomics.github.io/statisticalGenomicsCourse2018/assets/rmarkdownExamples/cptacLab3.Rmd) so as to analyse the full CPTAC studie. 
+- Add an additional section to answer each of the questions from 3.3.1-3.3.5.

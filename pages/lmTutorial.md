@@ -32,7 +32,7 @@ The patients, however, do not only differ in the histologic grade, but also on t
  - Details on the implementation can be found in the book Linear Models with R of Faraway (chapter 2). A free early version of the book can be found on [Practical Regression in R](http://www.maths.bath.ac.uk/~jjf23/book/)
 
 3. Data and R markdown File
- - You can download the data and the R-markdown file on the github repository of the course. [Resources tutorial 1](https://github.com/statOmics/statisticalGenomicsCourse/tree/master/tutorial1)
+ - You can download the data and the R-markdown file on the github repository of the course. [Resources tutorial 1](https://github.com/statOmics/statisticalGenomicsCourse2018/tree/master/tutorial1)
  - You can download a file by clicking on it
  ![Figure 1.](./figs/downloadFileFig1.png)
 
@@ -44,4 +44,4 @@ The patients, however, do not only differ in the histologic grade, but also on t
 
 #### 3. Software
 All developments will be done using R/Bioconductor via the [Rstudio](https://www.rstudio.com) interface. This can be installed locally or can be launched in a browser by hitting on
-[![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse/master?urlpath=rstudio)
+[![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse2018/master?urlpath=rstudio)

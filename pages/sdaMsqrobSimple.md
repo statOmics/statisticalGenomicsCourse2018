@@ -18,7 +18,7 @@ For proteomics experiments it is important to differentiate between experimental
 
 When working with the online binder version, hit the binder button below:
 
-[![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse/master?urlpath=rstudio)
+[![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/statOmics/statisticalGenomicsCourse2018/master?urlpath=rstudio)
 
 
 If you use the software on a more regular basis building a local docker environment is advised, (see [software page](./software4stats.md)).
@@ -39,7 +39,7 @@ The MSqRob App is launched:
 
 ### 2.3 The CPTAC A vs B dataset lab 3
 
-Our first case-study is a subset of the data of the 6th study of the Clinical Proteomic Technology Assessment for Cancer (CPTAC). In this experiment, the authors spiked the Sigma Universal Protein Standard mixture 1 (UPS1) containing 48 different human proteins in a protein background of 60 ng/μL Saccharomyces cerevisiae strain BY4741 (MATa, leu2Δ0, met15Δ0, ura3Δ0, his3Δ1). Two different spike-in concentrations were used: 6A (0.25 fmol UPS1 proteins/μL) and 6B (0.74 fmol UPS1 proteins/μL) [5]. The raw data files can be downloaded from https://cptac-data-portal.georgetown.edu/cptac/public?scope=Phase+I (Study 6), the processed data can be downloaded by zipping the github repository [https://github.com/statOmics/statisticalGenomicsCourse/tree/data](https://github.com/statOmics/statisticalGenomicsCourse/tree/data), in the folder data/quantification/cptacAvsB_lab3. We limited ourselves to the data of LTQ-Orbitrap W at site 56. The data were searched with MaxQuant version 1.5.2.8, and detailed search settings were described in Goeminne et al. (2016) [1]. Three replicates are available for each concentration.
+Our first case-study is a subset of the data of the 6th study of the Clinical Proteomic Technology Assessment for Cancer (CPTAC). In this experiment, the authors spiked the Sigma Universal Protein Standard mixture 1 (UPS1) containing 48 different human proteins in a protein background of 60 ng/μL Saccharomyces cerevisiae strain BY4741 (MATa, leu2Δ0, met15Δ0, ura3Δ0, his3Δ1). Two different spike-in concentrations were used: 6A (0.25 fmol UPS1 proteins/μL) and 6B (0.74 fmol UPS1 proteins/μL) [5]. The raw data files can be downloaded from https://cptac-data-portal.georgetown.edu/cptac/public?scope=Phase+I (Study 6), the processed data can be downloaded by zipping the github repository [https://github.com/statOmics/statisticalGenomicsCourse2018/tree/data](https://github.com/statOmics/statisticalGenomicsCourse2018/tree/data), in the folder data/quantification/cptacAvsB_lab3. We limited ourselves to the data of LTQ-Orbitrap W at site 56. The data were searched with MaxQuant version 1.5.2.8, and detailed search settings were described in Goeminne et al. (2016) [1]. Three replicates are available for each concentration.
 
 ### 2.3.1. The Input tab
 
@@ -118,9 +118,9 @@ Every data analysis step is carried out in an R chunk, which starts with
 ```{r}
 ```
 
-A sample RMarkdown notebook can be found at [assessFoldChangesMaxLFQ.Rmd](https://statomics.github.io/statisticalGenomicsCourse/assets/rmarkdownExamples/assessFoldChangesMaxLFQ.Rmd).
+A sample RMarkdown notebook can be found at [assessFoldChangesMaxLFQ.Rmd](https://statomics.github.io/statisticalGenomicsCourse2018/assets/rmarkdownExamples/assessFoldChangesMaxLFQ.Rmd).
 
-Note, that the header of the rmarkdown Notebook often dissapears upon download. 
+Note, that the header of the rmarkdown Notebook often dissapears upon download.
 If this is the case, copy the header below, including the --- signs
 
 ``` yaml
@@ -175,17 +175,15 @@ Select an area on the plot and double click to zoom in. Double click on an unsel
 
 *Hint: The results can be saved. Open the file “project_Timestamp_CPTAC_AvsB_results.xlsx” in the default download folder of your browser*
 
-The entire analysis is also available in the RMarkdown file [cptacLab3](https://statomics.github.io/statisticalGenomicsCourse/assets/rmarkdownExamples/cptacLab3.Rmd).
-Again make sure to include a header file to specify the RMarkdown file as an RMarkdown notebook. 
+The entire analysis is also available in the RMarkdown file [cptacLab3](https://statomics.github.io/statisticalGenomicsCourse2018/assets/rmarkdownExamples/cptacLab3.Rmd).
+Again make sure to include a header file to specify the RMarkdown file as an RMarkdown notebook.
 
 #### 2.4 The Francisella dataset
 A study on the facultative pathogen Francisella tularensis was conceived by Ramond et al. (2015) [12]. F. tularensis enters the cells of its host by phagocytosis. The authors showed that F. tularensis is arginine deficient and imports arginine from the host cell via an arginine transporter, ArgP, in order to efficiently escape from the phagosome and reach the cytosolic compartment, where it can actively multiply. In their study, they compared the proteome of wild type F. tularensis (WT) to ArgP-gene deleted F. tularensis (knock-out, D8). For this exercise, we use a subset of the F. tularensis dataset where bacterial cultures were grown in biological triplicate and each sample was run on a nanoRSLC-Q Exactive PLUS instrument. The data were searched with MaxQuant version 1.4.1.2.
-The data can be found on [https://github.com/statOmics/statisticalGenomicsCourse/tree/data](https://github.com/statOmics/statisticalGenomicsCourse/tree/data).
+The data can be found on [https://github.com/statOmics/statisticalGenomicsCourse2018/tree/data](https://github.com/statOmics/statisticalGenomicsCourse2018/tree/data).
 
 Modify the Rmarkdown file for the cptac analysis to analyse the Francisella dataset
 
 Which contrast do we want to test now? [2.4.4a]
 
 Give the interpretation of the contrast for your top hit? [2.4.4b]
-
-
